@@ -16,22 +16,22 @@ import { StyledButton } from './button';
 
 
 const getLLMResponse = async (prompt: string) => {
-    // In a real application, this would be an API call to your LLM service
-    await new Promise(resolve => setTimeout(resolve, 1000)) // Simulate API delay
-    return {
-      team: [
-        { name: "TenZ", role: "Duelist", agent: "Jett", region: "North America", league: "VCT International" },
-        { name: "ShahZaM", role: "Initiator", agent: "Sova", region: "North America", league: "VCT International" },
-        { name: "dapr", role: "Sentinel", agent: "Cypher", region: "North America", league: "VCT International" },
-        { name: "SicK", role: "Flex", agent: "Sage", region: "North America", league: "VCT International" },
-        { name: "zombs", role: "Controller", agent: "Omen", region: "North America", league: "VCT International" },
-      ],
-      strategy: "This team composition balances aggressive play with strong defensive capabilities. TenZ as the main duelist can create space and get early picks, while ShahZaM provides crucial information Sova's recon abilities. Dapr's Cypher setups will be key for map control, SicK's flexibility Sage allows adaptable strategies, zombs' Omen smokes provide site executes retakes.",
-      strengths: "Strong fragging power, excellent information gathering, and versatile agent composition.",
-      weaknesses: "May struggle against teams with multiple aggressive duelists or those who can quickly break through Cypher's setups.",
-      igl: "ShahZaM",
+    try {
+      const response = await fetch('http://127.0.0.1:5000/generate_team', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt }),
+      });
+  
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error("Error fetching LLM response:", error);
+      return null;
     }
-}
+  };
 
 const predefinedPrompts = [
     "Build a team using only players from VCT International.",
@@ -124,7 +124,7 @@ export const TeamComposerComponent = () => {
             Predefined Prompts
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 gap-2">
+            <div >
               {predefinedPrompts.map((prompt, index) => (
                 <StyledButton
                 key={index}

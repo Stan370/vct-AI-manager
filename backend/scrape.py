@@ -9,11 +9,12 @@ from io import BytesIO
 S3_BUCKET_URL = "https://vcthackathon-data.s3.us-west-2.amazonaws.com"
 
 # (game-changers, vct-international, vct-challengers)
-LEAGUE = "game-changers"
+LEAGUE = "vct-international"
 
 # (2022, 2023, 2024)
-YEAR = 2022
+YEAR = 2024
 
+@app.route('/api/download-s3', methods=['POST','PUT'])
 def download_gzip_and_write_to_json(file_name, valid_file_name = None):
     if os.path.isfile(f"{file_name}.json"):
         return False

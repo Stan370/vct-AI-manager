@@ -1,0 +1,60 @@
+# Backend API
+
+Written in Python with [FastAPI](https://fastapi.tiangolo.com/).
+
+## Getting started
+
+- To get started, we need to deploy resources to create DynamoDB / Bedrock resource. To deploy, please see [Deploy using CDK](../README.md#deploy-using-cdk).
+- Create [poetry](https://python-poetry.org/) environment on your local machine
+
+```sh
+cd backend
+python3 -m venv .venv  # Optional (If you don't want to install poetry on your env)
+source .venv/bin/activate  # Optional (If you don't want to install poetry on your env)
+pip install poetry
+poetry install
+```
+
+Step-by-Step Guide:
+1. Download the Esports Fixture Data and Mapping Table
+You can use tools like AWS CLI or programming languages like Python with the boto3 library or Golang with the AWS SDK to interact with the S3 bucket.
+
+For AWS CLI:
+
+First, install and configure AWS CLI:
+
+bash
+Copy code
+aws configure
+Enter your AWS Access Key ID, Secret Access Key, Default Region (use us-west-2), and Output format (JSON or text).
+
+Then, download the data from the S3 bucket:
+
+bash
+Copy code
+aws s3 cp s3://vcthackathon-data/ /path/to/local/dir --recursive
+This will recursively copy all the data from the S3 bucket to your local machine.
+
+2. Iterate Over the Mapping Table and Get Platform Game IDs
+Once the mapping table and esports fixture data are downloaded locally, you can load and process them. For example, if the mapping table is in CSV format, you can use Python's pandas or a similar library in Golang to iterate over the data.
+
+Example in Python:
+
+python
+Copy code
+import pandas as pd
+
+# Load mapping table
+mapping_table = pd.read_csv('/path/to/mapping_table.csv')
+
+# Iterate over mapping table to get platform game IDs
+for index, row in mapping_table.iterrows():
+    platform_game_id = row['platform_game_id']
+    tournament_data = row['tournament_data']  # If needed
+    print(f"Platform Game ID: {platform_game_id}, Tournament: {tournament_data}")
+You can adjust the code according to the actual structure of your data.
+
+3. Download Game Data Files for Each Platform Game ID
+For each platform game ID obtained in the previous step, you’ll want to download the corresponding game data file from the S3 bucket.
+
+If the files are named according to the platform game ID, you can construct the download URLs dynamically or use the AWS SDK to download them.

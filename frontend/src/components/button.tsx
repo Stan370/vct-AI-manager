@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 
 export const StyledButton = styled(Button)(({ theme }) => ({
   display: 'flex',
-  width: '160px',
   flexDirection: 'column',
   gap: '8px',
   borderRadius: '16px',

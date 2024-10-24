@@ -4,6 +4,11 @@
 
 The VCT AI Manager is a project designed to leverage large language models (LLMs) for generating optimized team compositions in competitive gaming, specifically for Valorant. This project utilizes a combination of modern web technologies and AWS Bedrock to create a robust architecture that facilitates data management, processing, and user interaction.
 
+### Prerequisites
+* Python 3.9 or higher
+* pip
+* [Model Access in Amazon Bedrock](https://us-east-1.console.aws.amazon.com/bedrock/home?region=us-east-1#/modelaccess)
+
 ## Architecture Overview
 
 ### Frontend
@@ -64,21 +69,24 @@ To get started with the VCT AI Manager, follow these steps:
    cd backend
    pip install -r requirements.txt
    ```
+   To get a local copy up and running, follow these simple steps.
 
-3. **Set Up the Database**:
+3. **Set Up the Environment**:
    Initialize your database and run any necessary migrations.
+   config your AWS_ACCESS_KEY_ID & AWS_SECRET_ACCESS_KEY in .env.local
 
-4. **Run the Application**:
+4. **Deploy the Application**:
    Start the backend server:
    ```bash
    cd backend
    python app.py
+
    ```
 
    Start the frontend development server:
    ```bash
-   cd vct-ai-manager
-   npm run dev
+   cd frontend
+   npm start
    ```
 
 5. **Access the Application**:
