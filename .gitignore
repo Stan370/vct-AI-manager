@@ -1,0 +1,58 @@
+dist/
+build/
+logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Miscellaneous
+*.tgz
+*.zip
+
+/node_modules
+
+/build
+/venv
+/out
+/train-data
+
+# Ignore coverage reports
+/coverage
+
+# Ignore environment files
+.env
+.env.local
+.env.*.local
+
+# Ignore logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignore IDE specific files
+.vscode/
+.idea/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
