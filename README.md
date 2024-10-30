@@ -25,26 +25,13 @@ The VCT AI Manager is a project designed to leverage large language models (LLMs
 - **Integration**: Amazon Bedrock or other APIs (like OpenAI)
 - **Description**: The application integrates with LLM services to process user prompts and generate detailed team compositions based on the input provided.
 
-### Database
-- **Initial Setup**: SQLite
-- **Production Setup**: NoSQL database (e.g., MongoDB, DynamoDB)
-- **Description**: The database stores player profiles, performance data, roles, regions, and other metadata essential for generating team compositions.
-
-### Data Management
-- **Scripts**: Python scripts for data collection and preprocessing
-- **Description**: Custom scripts are developed to gather and preprocess data for training AI models, ensuring that the data is clean and structured for optimal performance.
-
-### Role Assignment Logic
-- **Implementation**: Custom Python modules
-- **Description**: Logic for calculating player roles and team synergy is implemented through custom modules, allowing for dynamic and context-aware role assignments.
-
-### Performance Assessment & Strategy Insights
-- **Analysis**: LLM-based reasoning
-- **Description**: The application provides insights into the performance of team compositions and the rationale behind each choice made by the LLM, enhancing the user's understanding of team dynamics.
-
 ## Datasets
 
 The datasets used in this project include player profiles, performance metrics, and historical match data. These datasets are crucial for training the LLM to understand player roles, strengths, weaknesses, and overall team synergy. The data is collected from various sources, preprocessed, and stored in the database for efficient access and analysis. The data was from [s3 bucket](https://vcthackathon-data.s3.us-west-2.amazonaws.com), [vlr.gg](https://www.vlr.gg/vct-2024) and [kaggle](https://www.kaggle.com/datasets/ryanluong1/valorant-champion-tour-2021-2023-data/data).
+
+- **Scripts**: Python scripts for data collection and preprocessing
+- **Description**: Custom scripts are developed to gather and preprocess data for training AI models, ensuring that the data is clean and structured for optimal performance.
+
 
 
 ## Getting Started
