@@ -1,8 +1,26 @@
 # vct-AI-manager
+This project builds a large language model (LLM)-powered digital assistant designed to support data analysis and decision-making around competitive Valorant esports, specifically the Valorant Champions Tour (VCT).
 
+Overview
 ## Introduction
 
-The VCT AI Manager is a project designed to leverage large language models (LLMs) for generating optimized team compositions in competitive gaming, specifically for Valorant. This project utilizes a combination of modern web technologies and AWS Bedrock to create a robust architecture that facilitates data management, processing, and user interaction.
+
+In the Valorant esports ecosystem, a VCT data analyst plays a crucial role by gathering, processing, and interpreting detailed in-game data—such as match statistics, player behavior, economy usage, positioning, and agent pick rates—from official tournament matches. Their insights help various stakeholders:
+
+* **Professional Teams** (e.g., Fnatic, Sentinels, Paper Rex): Scout opponents, identify tactical patterns, develop counter-strategies, and optimize their own gameplay and economy management.
+* **Riot Games / VCT Organizers**: Generate broadcast insights, create engaging storylines, produce data-driven content, and support game balance decisions based on competitive metrics.
+* **Community Tools and Startups** (e.g., Blitz.gg, Tracker.gg): Aggregate and process VCT data to build analytical tools for players, coaches, and fans.
+
+## Project Description
+
+This assistant leverages **Amazon Bedrock** to power a chat interface that can answer complex questions about Valorant esports players and teams. It uses native LLM capabilities combined with structured VCT data sources to provide actionable insights for team building and strategic planning.
+
+Key features include:
+
+* Natural language querying of player stats and match outcomes
+* Data-driven team composition suggestions
+* Tactical analysis based on player performance trends
+* Flexible, conversational interaction for easy information retrieval
 
 ### Prerequisites
 * Python 3.9 or higher
