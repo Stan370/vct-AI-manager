@@ -1,7 +1,7 @@
 # vct-AI-manager
 This project builds a large language model (LLM)-powered digital assistant designed to support data analysis and decision-making around competitive Valorant esports, specifically the Valorant Champions Tour (VCT).
 
-Overview
+
 ## Introduction
 
 
